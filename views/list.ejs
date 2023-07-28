@@ -1,0 +1,46 @@
+<%- include('partials/header'); -%>
+
+    <div class="box" id="heading">
+        <h1><%=listTitle%> </h1>
+        <h3><%=dateFromToLocaleDateString%> </h3>
+
+        <!-- <%if (kindOfDay === 'weekend') {%>
+            <h1 style="color: blue">It is a <%=kindOfDay%> and the date is...</h1>
+        <%} else {%>
+            <h1 style="color: turquoise">It is a <%=kindOfDay%> work day and the date is...</h1>
+        <%}%> -->
+    </div>
+    <div class="box">
+        
+        
+    <!-- <p> <%=weekdayVar%> <%=monthVar%> <%=monthDay%> <%=year%> </p> -->
+    
+    <!-- <ul>
+        <%     for (var i = 0; i < items.length; i++) {%>
+            <li><%=items[i]%></li>
+        <%}%>
+    </ul>
+    <p>Other foreach</p> -->
+    <ul>
+        <%items.forEach((item) => {%>
+            
+            <!-- <li><%=item%></li> -->
+            <div class="item">
+                <input type="checkbox">
+                <p><%=item%></p>
+            </div>
+            <%} )%>
+    </ul>
+
+    
+
+
+    <form class="item" action="/" method="post">
+        <input type="text" name="newItem" class="form-control middle" placeholder="New Item" autocomplete="off" required autofocus>
+        <!-- <button class="btn btn-lg btn-primary btn-block" type="submit">Add</button> -->
+        <button type="submit" name="AddButton" value="<%=listTitle%>" >+</button>
+    </form>
+
+    </div>
+    
+<%- include('partials/footer'); -%>
